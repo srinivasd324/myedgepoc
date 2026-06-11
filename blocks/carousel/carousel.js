@@ -30,13 +30,11 @@ export default function decorate(block) {
         
           });
       }
-    }); 
-  [...block.children].forEach((row,r) => {
-    if(r==0){
-      const preBtn = document.querySelector('.btn-prev');
-      preBtn.style.display="none";
-    }
-  });
+    });
+
+    const preBtn = document.querySelector('.btn-prev');
+    preBtn.style.display="none";
+    const nxtBtn = document.querySelector('.btn-next');
   
   
     const slides = document.querySelectorAll(".slide");
@@ -59,6 +57,8 @@ export default function decorate(block) {
   // check if current slide is the last and reset current slide
   if (curSlide === maxSlide) {
     curSlide = 0;
+    preBtn.style.display="show";
+    nxtBtn.style.display="none";
   } else {
     curSlide++;
   }
@@ -77,6 +77,8 @@ export default function decorate(block) {
   // check if current slide is the first and reset current slide to last
   if (curSlide === 0) {
     curSlide = maxSlide;
+    preBtn.style.display="none";
+    nxtBtn.style.display="show";
   } else {
     curSlide--;
   }
