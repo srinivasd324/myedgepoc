@@ -57,13 +57,7 @@ export default function decorate(block) {
   // check if current slide is the last and reset current slide
     console.log("Cur Slide==", curSlide);
     console.log("Max Slide ===", maxSlide);
-    if(curSlide== slides.length){
-      console.log("Slide Length ===", slides.length);
-      prevSlide.style.display="block";
-      this.style.display="none";
-    }
   if (curSlide === maxSlide) {
-    
     curSlide = 0;
   } else {
     curSlide++;
@@ -71,6 +65,11 @@ export default function decorate(block) {
   
   //   move slide by -100%
   slides.forEach((slide, indx) => {
+    console.log("Index--",index);
+    if(index==maxSlide){
+      prevSlide.style.display="show";
+      this.style.display="none";
+    }
     slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
   });
