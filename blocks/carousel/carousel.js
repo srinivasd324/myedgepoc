@@ -60,19 +60,15 @@ export default function decorate(block) {
   } else {
     curSlide++;
   }
-    if(curSlide == maxSlide-1){
-      prevSlide.style.display="block";
-      this.style.display="none";
-    }
-
-    console.log("Cur Slide==", curSlide);
-    console.log("Max Slide ===", maxSlide);
-  
-  
+    
   //   move slide by -100%
   slides.forEach((slide, indx) => {
     slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
+    if(curSlide == maxSlide){
+      prevSlide.style.display="block";
+      this.style.display="none";
+    }
   });
   
   // select next slide button
