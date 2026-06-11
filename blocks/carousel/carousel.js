@@ -55,9 +55,12 @@ export default function decorate(block) {
   // add event listener and navigation functionality
   nextSlide.addEventListener("click", function () {
   // check if current slide is the last and reset current slide
+    
+  if (curSlide === maxSlide) {
     console.log("Cur Slide==", curSlide);
     console.log("Max Slide ===", maxSlide);
-  if (curSlide === maxSlide) {
+    prevSlide.style.display="block";
+    this.style.display="none";
     curSlide = 0;
   } else {
     curSlide++;
@@ -65,11 +68,6 @@ export default function decorate(block) {
   
   //   move slide by -100%
   slides.forEach((slide, indx) => {
-    console.log("Index--",indx);
-    if(indx==maxSlide){
-      prevSlide.style.display="show";
-      this.style.display="none";
-    }
     slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
   });
