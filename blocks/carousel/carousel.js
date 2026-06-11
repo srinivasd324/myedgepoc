@@ -32,9 +32,9 @@ export default function decorate(block) {
       }
     });
 
-    const preBtn = document.querySelector('.btn-prev');
-    preBtn.style.display="none";
-    const nxtBtn = document.querySelector('.btn-next');
+    const prevSlide = document.querySelector(".btn-prev");
+    prevSlide.style.display="none";
+    const nextSlide = document.querySelector(".btn-next");
   
   
     const slides = document.querySelectorAll(".slide");
@@ -45,7 +45,7 @@ export default function decorate(block) {
     });
   
     // select next slide button
-  const nextSlide = document.querySelector(".btn-next");
+  
   
   // current slide counter
   let curSlide = 0;
@@ -57,8 +57,8 @@ export default function decorate(block) {
   // check if current slide is the last and reset current slide
   if (curSlide === maxSlide) {
     curSlide = 0;
-    preBtn.style.display="show";
-    nxtBtn.style.display="none";
+    prevSlide.style.display="show";
+    this.style.display="none";
   } else {
     curSlide++;
   }
@@ -70,15 +70,15 @@ export default function decorate(block) {
   });
   
   // select next slide button
-  const prevSlide = document.querySelector(".btn-prev");
+  
   
   // add event listener and navigation functionality
   prevSlide.addEventListener("click", function () {
   // check if current slide is the first and reset current slide to last
   if (curSlide === 0) {
     curSlide = maxSlide;
-    preBtn.style.display="none";
-    nxtBtn.style.display="show";
+    this.style.display="none";
+    nextSlide.style.display="show";
   } else {
     curSlide--;
   }
