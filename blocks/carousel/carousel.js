@@ -80,8 +80,6 @@ export default function decorate(block) {
   // check if current slide is the first and reset current slide to last
   if (curSlide === 0) {
     curSlide = maxSlide;
-    this.style.display="none";
-    nextSlide.style.display="show";
   } else {
     curSlide--;
   }
@@ -91,6 +89,16 @@ export default function decorate(block) {
     slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
   });
+  console.log("Cur Slide==", curSlide);
+    console.log("Max Slide ===", maxSlide);
+  if (curSlide === maxSlide) {
+    prevSlide.style.display="block";
+    nextSlide.style.display="none";
+    curSlide = 0;
+  } else if(curSlide ==0){
+    prevSlide.style.display="none";
+    nextSlide.style.display="none";
+  }
   
   
   }
