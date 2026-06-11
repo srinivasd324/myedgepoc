@@ -61,3 +61,6 @@
     top: 45%;
     right: 2%;
   }
+ .btn.z-index-pre, .btn.z-index-nxt {
+     z-index:0;
+ }
