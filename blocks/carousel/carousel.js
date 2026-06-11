@@ -33,7 +33,7 @@ export default function decorate(block) {
     }); 
   [...block.children].forEach((row,r) => {
     if(r==0){
-      const preBtn = document.querySelector('btn-prev');
+      const preBtn = document.querySelector('.btn-prev');
       preBtn.style.display="none";
     }
   });
