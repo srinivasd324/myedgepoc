@@ -8,7 +8,6 @@ export default function decorate(block) {
     const rows= [...block.children];
     [...block.children].forEach((row,r) => {
       if(r==0){
-        console.log("Text Content===", row.textContent);
           const nextbtn = document.createElement('button');
           nextbtn.classList.add('btn');
           nextbtn.classList.add('btn-next');
@@ -32,6 +31,12 @@ export default function decorate(block) {
           });
       }
     }); 
+  [...block.children].forEach((row,r) => {
+    if(r==0){
+      const preBtn = document.querySelector('btn-prev');
+      preBtn.style.display="none";
+    }
+  });
   
   
     const slides = document.querySelectorAll(".slide");
