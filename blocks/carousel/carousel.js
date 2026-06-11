@@ -33,7 +33,7 @@ export default function decorate(block) {
     });
 
     const prevSlide = document.querySelector(".btn-prev");
-    prevSlide.style.display="none";
+    //prevSlide.style.display="none";
     const nextSlide = document.querySelector(".btn-next");
   
   
@@ -55,12 +55,12 @@ export default function decorate(block) {
   // add event listener and navigation functionality
   nextSlide.addEventListener("click", function () {
   // check if current slide is the last and reset current slide
-    
-  if (curSlide === maxSlide) {
-    console.log("Cur Slide==", curSlide);
+     console.log("Cur Slide==", curSlide);
     console.log("Max Slide ===", maxSlide);
-    prevSlide.style.display="block";
-    this.style.display="none";
+  if (curSlide === maxSlide) {
+   
+    //prevSlide.style.display="block";
+    //this.style.display="none";
     curSlide = 0;
   } else {
     curSlide++;
@@ -89,16 +89,5 @@ export default function decorate(block) {
     slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
   });
-  console.log("Cur Slide==", curSlide);
-    console.log("Max Slide ===", maxSlide);
-  if (curSlide === maxSlide) {
-    prevSlide.style.display="block";
-    nextSlide.style.display="none";
-    curSlide = 0;
-  } else if(curSlide ==0){
-    prevSlide.style.display="none";
-    nextSlide.style.display="none";
-  }
-  
   
   }
