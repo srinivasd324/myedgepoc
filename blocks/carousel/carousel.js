@@ -33,7 +33,7 @@ export default function decorate(block) {
     });
 
     const prevSlide = document.querySelector(".btn-prev");
-    //prevSlide.style.display="none";
+    prevSlide.style.display="none";
     const nextSlide = document.querySelector(".btn-next");
   
   
@@ -87,6 +87,10 @@ export default function decorate(block) {
   slides.forEach((slide, indx) => {
     slide.style.transform = `translateX(${100 * (indx - curSlide)}%)`;
   });
+     if(curSlide == 0){
+      nextSlide.style.display="block";
+      this.style.display="none";
+    }
   });
   
   }
