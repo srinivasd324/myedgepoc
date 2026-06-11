@@ -65,8 +65,8 @@ export default function decorate(block) {
   
   //   move slide by -100%
   slides.forEach((slide, indx) => {
-    console.log("Index--",index);
-    if(index==maxSlide){
+    console.log("Index--",indx);
+    if(indx==maxSlide){
       prevSlide.style.display="show";
       this.style.display="none";
     }
