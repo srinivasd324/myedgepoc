@@ -58,12 +58,11 @@ export default function decorate(block) {
      console.log("Cur Slide==", curSlide);
     console.log("Max Slide ===", maxSlide);
   if (curSlide === maxSlide) {
-   
-    //prevSlide.style.display="block";
-    //this.style.display="none";
+    prevSlide.style.display="block";
+    this.style.display="none";
     curSlide = 0;
   } else {
-    curSlide++;
+    ++curSlide;
   }
   
   //   move slide by -100%
