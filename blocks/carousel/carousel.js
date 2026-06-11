@@ -56,12 +56,14 @@ export default function decorate(block) {
   nextSlide.addEventListener("click", function () {
   // check if current slide is the last and reset current slide
   if (curSlide === maxSlide) {
-    prevSlide.style.display="block";
-    this.style.display="none";
     curSlide = 0;
   } else {
     curSlide++;
   }
+    if(curSlide == maxSlide-1){
+      prevSlide.style.display="block";
+      this.style.display="none";
+    }
 
     console.log("Cur Slide==", curSlide);
     console.log("Max Slide ===", maxSlide);
