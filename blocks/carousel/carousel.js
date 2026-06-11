@@ -8,6 +8,7 @@ export default function decorate(block) {
     const rows= [...block.children];
     [...block.children].forEach((row,r) => {
       if(r==0){
+        console.log("Text Content===", row.textContent);
           const nextbtn = document.createElement('button');
           nextbtn.classList.add('btn');
           nextbtn.classList.add('btn-next');
