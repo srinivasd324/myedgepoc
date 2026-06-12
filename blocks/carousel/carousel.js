@@ -58,6 +58,7 @@ export default function decorate(block) {
   if (curSlide === maxSlide) {
     curSlide = 0;
   } else {
+    prevSlide.style.display="block";
     curSlide++;
   }
     
